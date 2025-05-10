@@ -1,0 +1,67 @@
+/* General padding for all elements */
+* {
+    -fx-padding: 10;
+}
+
+/* VBox styling */
+.vbox {
+    -fx-spacing: 15;
+    -fx-padding: 10;
+}
+
+/* Welcome label */
+.label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2d6ccf;
+    -fx-alignment: center;
+}
+
+/* TextField (input fields) */
+.text-field {
+    -fx-padding: 10;
+}
+
+/* Button styling */
+.button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-padding: 10;
+}
+
+/* ComboBox (role selector) */
+.combo-box {
+    -fx-padding: 10;
+}
+
+/* ScrollPane styling */
+.scroll-pane {
+    -fx-pref-height: 200;
+    -fx-pref-width: 300;
+}
+
+/* Label for Team Members */
+.team-members-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-padding: 10;
+    -fx-text-fill: #2d6ccf;
+}
+
+/* Background colors using your provided scheme */
+.root {
+    -fx-background-color: #96B6C5;
+}
+
+.text-field, .combo-box, .button {
+    -fx-background-color: #ADC4CE;
+}
+
+.scroll-pane {
+    -fx-background-color: #EEE0C9;
+}
+
+/* ScrollPane ListView */
+.list-view {
+    -fx-background-color: #F1F0E8;
+}
