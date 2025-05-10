@@ -14,14 +14,15 @@ public class Team<T extends Employee> {
         teamMembers.remove(teamMember);
     }
 
-    // Use this method to return team members
     public List<T> getTeamMembers() {
         return teamMembers;
     }
 
-    public void returnTeamMembers(List<T> teamMembers) {
+    // This method prints detailed information of all team members
+    public void printTeamInfo() {
         for (T member : teamMembers) {
-            System.out.println(member.getName());
+            System.out.println(member.displayInfo());
         }
     }
 }
+

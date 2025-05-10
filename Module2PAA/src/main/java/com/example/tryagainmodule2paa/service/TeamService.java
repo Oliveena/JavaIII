@@ -24,6 +24,10 @@ public class TeamService {
             default -> throw new IllegalArgumentException("Invalid role");
         }
 
+        if ("Manager".equals(role) && bonusRate <= 0) {
+            throw new IllegalArgumentException("Managers must have a positive bonus rate.");
+        }
+
         employeeRepo.save(employee);
     }
 

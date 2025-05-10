@@ -18,7 +18,7 @@
     <description>Simple JavaFX Spring Boot Application</description>
 
     <properties>
-        <java.version>17</java.version>
+        <java.version>21</java.version> <!-- Ensure you use JDK 21 -->
     </properties>
 
     <dependencies>
@@ -39,6 +39,26 @@
             <artifactId>javafx-fxml</artifactId>
             <version>21.0.7</version>
         </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-base</artifactId>
+            <version>21.0.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>21.0.7</version>
+        </dependency>
+
+        <!-- Spring Boot modules for specific features -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -54,9 +74,16 @@
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
-                <configuration>
-                    <mainClass>com.example.tryagainmodule2paa.MainApp</mainClass>
-                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>com.example.tryagainmodule2paa.MainApp</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

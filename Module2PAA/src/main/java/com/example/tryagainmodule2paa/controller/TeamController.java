@@ -80,20 +80,30 @@ public class TeamController {
 
     @FXML
     public void handleAddMember() {
-        String name = nameInput.getText();
-        int age = Integer.parseInt(ageInput.getText());
-        String email = emailInput.getText();
-        double salary = Double.parseDouble(salaryInput.getText());
-        String role = roleSelector.getValue();
+        try {
+            String name = nameInput.getText();
+            if (name.isBlank()) throw new IllegalArgumentException("Name is required.");
 
-        String language = languageInput.getText();
-        String managerialStyle = managerialStyleInput.getText();
-        double bonusRate = bonusRateInput.getText().isEmpty() ? 0.0 : Double.parseDouble(bonusRateInput.getText());
-        String program = programInput.getText();
+            int age = Integer.parseInt(ageInput.getText());
+            String email = emailInput.getText();
+            if (!email.contains("@")) throw new IllegalArgumentException("Invalid email.");
 
-        teamService.addMember(name, age, email, salary, role, language, managerialStyle, bonusRate, program);
+            double salary = Double.parseDouble(salaryInput.getText());
+            String role = roleSelector.getValue();
 
-        refreshTeamList();
+            String language = languageInput.getText();
+            String managerialStyle = managerialStyleInput.getText();
+            double bonusRate = bonusRateInput.getText().isEmpty() ? 0.0 : Double.parseDouble(bonusRateInput.getText());
+            String program = programInput.getText();
+
+            teamService.addMember(name, age, email, salary, role, language, managerialStyle, bonusRate, program);
+
+            refreshTeamList();
+        } catch (NumberFormatException e) {
+            System.err.println("Invalid number format: " + e.getMessage());
+        } catch (IllegalArgumentException e) {
+            System.err.println("Validation error: " + e.getMessage());
+        }
     }
 
     private void refreshTeamList() {

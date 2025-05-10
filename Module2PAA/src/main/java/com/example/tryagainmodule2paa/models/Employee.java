@@ -47,6 +47,5 @@ public abstract class Employee {
 
     public abstract String displayInfo();
 
-    public abstract double calculatePay() ;
+    public abstract double calculatePay();
 }
-
